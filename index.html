@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa de comidas de Ursu 💖 Delicias Miniatura para Barbie</title>
+    
+    <!-- Metas SEO -->
+    <meta name="description" content="Bienvenido a la Casa de comidas de Ursu. La boutique de comida en miniatura y de fantasía más apetecible y chic para muñecas Barbie. ¡Hacemos envíos directos a la Dreamhouse!">
+    <meta name="keywords" content="comida barbie, comida miniatura, casa de comidas de ursu, barbiecore, juguetes miniatura, comida de juguete, coquette aesthetic">
+    
+    <!-- Google Fonts: Pacifico (logo), DynaPuff (títulos divertidos), Quicksand (lectura limpia y tierna) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;600;700&family=Pacifico&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Efecto de Fondo: Partículas de corazones flotantes -->
+    <div id="particle-container" class="particle-overlay"></div>
+
+    <!-- Header Principal -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span class="logo-sparkle">✨</span>
+                <span class="logo-text">Casa de comidas de Ursu</span>
+                <span class="logo-sparkle">✨</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#menu-section" class="nav-link">🎀 Menú</a>
+                <a href="#combo-section" class="nav-link">🎁 Crea tu Combo</a>
+                <a href="#reviews-section" class="nav-link">💬 Reseñas</a>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="cart-btn" id="cart-toggle-btn" aria-label="Ver carrito">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-text">Tu Mesa</span>
+                    <span class="cart-badge" id="cart-badge">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Hero -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-badge">💖 100% Hecho con Amor y Purpurina 💖</div>
+            <h1 class="hero-title">¡El Menú más Glam y Delicioso para tu Dreamhouse!</h1>
+            <p class="hero-subtitle">Boutique exclusiva de delicias miniatura hiper-apetecibles elaboradas para las barbies más chic del vecindario. ¡Pequeños bocados de pura fantasía rosa!</p>
+            <div class="hero-actions">
+                <a href="#menu-section" class="btn btn-primary">📖 Explorar el Menú</a>
+                <a href="#combo-section" class="btn btn-secondary">🌸 Diseñar un Combo</a>
+            </div>
+        </div>
+        
+        <!-- Tarjeta Hero Animada flotante -->
+        <div class="hero-visual">
+            <div class="hero-card">
+                <div class="hero-card-badge">¡Estrella de la Casa!</div>
+                <img src="assets/dona_unicornio.png" alt="Dona Unicornio" class="hero-card-img">
+                <div class="hero-card-info">
+                    <h3>Dona Unicornio Mágica</h3>
+                    <p class="price">🎀 4.5 B-Coins</p>
+                    <button class="btn btn-small add-to-cart-direct" data-id="1">Añadir al Plato ✨</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenedor Principal de la App -->
+    <main class="app-container">
+
+        <!-- Sección de Filtros y Catálogo -->
+        <section id="menu-section" class="menu-section">
+            <div class="section-header">
+                <h2 class="section-title">El Menú de Fantasía 🍰🍳</h2>
+                <p class="section-subtitle">Selecciona tus comidas favoritas a escala Barbie. ¡Haz clic en los botones apetecibles para sumarlas al banquete!</p>
+            </div>
+
+            <!-- Filtros de categoría -->
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">Todos los Caprichos 🎀</button>
+                <button class="filter-btn" data-category="dulce">Mini Dulces 🍰</button>
+                <button class="filter-btn" data-category="salado">Delicias Saladas 🍔</button>
+                <button class="filter-btn" data-category="bebida">Bebidas Mágicas 🍹</button>
+            </div>
+
+            <!-- Grid de Productos -->
+            <div class="products-grid" id="products-grid">
+                <!-- Se poblará dinámicamente con app.js -->
+            </div>
+        </section>
+
+        <!-- Sección Interactiva: Crea tu Combo Dreamhouse -->
+        <section id="combo-section" class="combo-section">
+            <div class="combo-card-wrapper">
+                <div class="combo-info">
+                    <div class="special-tag">¡Oferta Especial Dreamhouse! 🎁</div>
+                    <h2 class="section-title">Crea tu "Combo Barbie Box"</h2>
+                    <p>¡Elige una delicia salada, una bebida mágica y un mini dulce para armar la lonchera más glam de la escuela! Obtén un <strong>20% de descuento</strong> y una cajita rosa de colección gratis.</p>
+                    
+                    <div class="combo-steps">
+                        <div class="combo-step" data-step="salado">
+                            <span class="step-num">1</span>
+                            <span class="step-text">Elige tu Salado: <strong id="selected-salado-name">Ninguno</strong></span>
+                        </div>
+                        <div class="combo-step" data-step="bebida">
+                            <span class="step-num">2</span>
+                            <span class="step-text">Elige tu Bebida: <strong id="selected-bebida-name">Ninguno</strong></span>
+                        </div>
+                        <div class="combo-step" data-step="dulce">
+                            <span class="step-num">3</span>
+                            <span class="step-text">Elige tu Dulce: <strong id="selected-dulce-name">Ninguno</strong></span>
+                        </div>
+                    </div>
+
+                    <div class="combo-price-box">
+                        <span class="old-price" id="combo-old-price">0.0 B-Coins</span>
+                        <span class="new-price" id="combo-new-price">0.0 B-Coins</span>
+                    </div>
+
+                    <button class="btn btn-primary w-full disabled" id="add-combo-btn" disabled>
+                        🎁 Añadir Combo Completo a la Mesa
+                    </button>
+                </div>
+
+                <!-- Bento de previsualización de Combo -->
+                <div class="combo-preview-bento">
+                    <div class="bento-box">
+                        <div class="bento-compartment compartment-salado" id="bento-salado">
+                            <span class="placeholder-icon">🍔</span>
+                            <p class="placeholder-txt">Selecciona un salado</p>
+                        </div>
+                        <div class="bento-compartment compartment-bebida" id="bento-bebida">
+                            <span class="placeholder-icon">🍹</span>
+                            <p class="placeholder-txt">Selecciona una bebida</p>
+                        </div>
+                        <div class="bento-compartment compartment-dulce" id="bento-dulce">
+                            <span class="placeholder-icon">🍰</span>
+                            <p class="placeholder-txt">Selecciona un dulce</p>
+                        </div>
+                        <div class="bento-label">Dreamhouse Bento Box 💖</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Testimonios / Reseñas de Muñecas -->
+        <section id="reviews-section" class="reviews-section">
+            <div class="section-header">
+                <h2 class="section-title">Lo que dicen en Barbie Land 🗣️💕</h2>
+                <p class="section-subtitle">Nuestros comensales más exigentes nos recomiendan con 5 estrellas de purpurina.</p>
+            </div>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"¡El sushi rosa es sensacional! Combina perfecto con mi convertible fucsia y tiene el tamaño exacto para mis manos articuladas."</p>
+                    <div class="review-author">
+                        <div class="author-avatar avatar-barbie">👩🏼‍🎤</div>
+                        <div class="author-info">
+                            <h4>Barbie Estereotípica</h4>
+                            <p>Presidenta de la Casa de los Sueños</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"El Batido Celestial de Fresa tiene Kenergy de sobra. ¡Me da toda la energía que necesito para pararme en la playa todo el día!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar avatar-ken">👱🏼‍♂️</div>
+                        <div class="author-info">
+                            <h4>Ken Beach</h4>
+                            <p>Experto en Playa y Patinaje</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"Es el menú oficial decretado para todos los ministerios de Barbie Land. ¡Delicioso, estético y con el glamour que nos define!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar avatar-president">👩🏾‍💼</div>
+                        <div class="author-info">
+                            <h4>Barbie Presidenta</h4>
+                            <p>Gobernante de Barbie Land</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Carrito Lateral Deslizable (Sidebar) -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-sidebar-header">
+            <h3>🛍️ Tu Banquete</h3>
+            <button class="close-cart-btn" id="cart-close-btn" aria-label="Cerrar carrito">&times;</button>
+        </div>
+        
+        <div class="cart-items" id="cart-items">
+            <!-- Vacío por defecto o con items de JS -->
+            <div class="empty-cart-message">
+                <span class="empty-icon">🍽️</span>
+                <p>Tu plato aún está vacío. ¡Elige comidas deliciosas para llenarlo!</p>
+            </div>
+        </div>
+        
+        <div class="cart-summary">
+            <div class="summary-line">
+                <span>Subtotal Comida:</span>
+                <span id="cart-subtotal">0.0 B-Coins</span>
+            </div>
+            <div class="summary-line">
+                <span>10% Purpurina Extra:</span>
+                <span id="cart-tax">0.0 B-Coins</span>
+            </div>
+            <div class="summary-line total">
+                <span>Total de la Mesa:</span>
+                <span id="cart-total">0.0 B-Coins</span>
+            </div>
+            
+            <button class="btn btn-primary w-full" id="checkout-btn">
+                ✨ Enviar a la Dreamhouse ✨
+            </button>
+        </div>
+    </div>
+
+    <!-- Backdrop translúcido para el carrito -->
+    <div class="cart-backdrop" id="cart-backdrop"></div>
+
+    <!-- Modal de Pedido Exitoso -->
+    <div class="success-modal" id="success-modal">
+        <div class="success-modal-content">
+            <div class="success-icon">💖📦✈️</div>
+            <h2>¡Pedido Camino al Dreamhouse!</h2>
+            <p>Tu comida miniatura está siendo empaquetada con la mejor purpurina y cintas fucsia del reino.</p>
+            <div class="success-details">
+                <p><strong>Pedido N°:</strong> <span id="success-order-num">#B-9842</span></p>
+                <p><strong>Tiempo de entrega:</strong> ¡Menos de lo que tarda un parpadeo de plástico!</p>
+            </div>
+            <button class="btn btn-primary" id="success-close-btn">¡Súper, gracias! ✨</button>
+        </div>
+    </div>
+
+    <!-- Notificación emergente (Toast) -->
+    <div class="toast-notification" id="toast-notification"></div>
+
+    <!-- Footer de la página -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2>Casa de comidas de Ursu</h2>
+                <p>Haciendo la vida de tus muñecas más dulce y apetecible desde 2026.</p>
+            </div>
+            <div class="footer-meta">
+                <p>© 2026 Casa de comidas de Ursu. Todos los derechos de purpurina reservados.</p>
+                <p>Diseño Web Premium para Coleccionistas y Soñadores.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lógica de la aplicación JS -->
+    <script src="app.js"></script>
+</body>
+</html>
